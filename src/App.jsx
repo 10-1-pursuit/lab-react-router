@@ -1,14 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
 */
 import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import Footer from "./components/common/Footer";
 
 /*
   Data
@@ -27,9 +27,13 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        <Route path="/pets" element={<PetsList pets={pets}/>} />
+        <Route path="/pets/cats" element={<PetsList pets={pets.filter(pet => pet.kind === 'Cat')} />} />
+        <Route path="/pets/dogs" element={<PetsList pets={pets.filter(pet => pet.kind === 'Dog')} />} />
+      </Routes>
       <Footer />
     </div>
   );
