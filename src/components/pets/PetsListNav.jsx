@@ -1,18 +1,36 @@
 import React from "react";
 import "./PetsListNav.css";
 
+
+
+import { Link } from "react-router-dom"
+
 export const PetsListNav = ({ cats, dogs }) => {
+
+  // useNavigate()
+
   return (
     <nav className="pets-nav">
       <ul>
         <li>
-          <a href="/pets/cats">See All Cats ({cats.length})</a>
+          <Link to={"/"}> NorthWest Animal Hospital</Link>
+
+        </li>
+
+        <li>
+          <Link to={"/staff"}>All Staff </Link>
         </li>
         <li>
-          <a href="/pets/dogs">See All Dogs ({dogs.length})</a>
+
+          <Link to={"/pets/cats"}> See All Cats ({`Cats: ${cats.length}`})</Link>
         </li>
-      </ul>
-    </nav>
+
+        <li>
+          <Link to={"/pets/dogs"}> See All Dogs ({`Dogs: ${dogs.length}`})</Link>
+        </li>
+
+      </ul >
+    </nav >
   );
 };
 
