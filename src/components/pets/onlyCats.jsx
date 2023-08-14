@@ -6,8 +6,18 @@ import PetsList from "./PetsList";
 const onlyCats = ({ cats }) => {
 
 
-    return <PetsList cats={cats} dogs={[]} />
+    return (
+        <div>
 
+            {cats.map(cat => (
+
+                <Pet key={cat.id} kind="cat" pet={cat} />
+
+
+            ))}
+        </div>
+    )
 };
+
 
 export default onlyCats;

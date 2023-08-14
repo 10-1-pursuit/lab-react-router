@@ -2,7 +2,7 @@ import React from "react";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-
+import { Link } from "react-router-dom";
 
 
 export const PetsList = ({ pets }) => {
@@ -14,10 +14,6 @@ export const PetsList = ({ pets }) => {
     },
     [[], []]
   );
-
-
-  // const [allDogs, setAllDogs] = useState([])
-  // const [allCats, setAllCats] = useState([])
 
 
 
@@ -40,8 +36,8 @@ export const PetsList = ({ pets }) => {
 
         {/* Links to All Cats and All Dogs */}
 
-        <Link to="pets/cats"> See All Cats </Link>
-        <Link to="pets.cats">See All Dogs</Link>
+        <Link to="/pets/cats"> See All Cats </Link>
+        <Link to="/pets/dogs">See All Dogs</Link>
       </section>
     </section>
   );

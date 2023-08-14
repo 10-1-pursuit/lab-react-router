@@ -19,14 +19,23 @@ function Nav() {
       <aside>
         <ul>
           <li>
-            <a href="/staff">All Staff</a>
+            <Link to={"/staff"}> All Staff</Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <Link to={"/pets"}>All Pets</Link>
+          </li>
+          <li>
+            <Link to={"/pets/cats"}>All Cats</Link>
+
+          </li>
+
+          <li>
+
+            <Link to={"./pets/dogs"}> All Dogs</Link>
           </li>
         </ul>
       </aside>
-    </header>
+    </header >
   );
 }
 

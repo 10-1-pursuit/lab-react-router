@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 /*
   Components
 */
@@ -9,7 +9,9 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
-
+import PetsListNav from "./components/pets/PetsListNav";
+import onlyCats from "./components/pets/onlyCats";
+import onlyDogs from "./components/pets/onlyDogs";
 /*
   Data
   ---------------
@@ -46,8 +48,8 @@ function App() {
           <Route path="/staff" element={<StaffList employees={employees} />} />
           <Route path="/pets" element={<PetsList pets={pets} />} />
 
-          <Route path="/pets/cats" element={<onlyCats cats={cats} />} />
-          <Route path="/pets/dogs" element={<onlyDogs dogs={dogs} />} />
+          <Route path="/pets/cats" element={<onlyCats cats={onlyCats} />} />
+          <Route path="/pets/dogs" element={<onlyDogs dogs={onlyDogs} />} />
 
         </Routes>
 

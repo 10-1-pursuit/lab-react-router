@@ -5,7 +5,7 @@ import "./PetsListNav.css";
 
 import { Link } from "react-router-dom"
 
-export const PetsListNav = ({ cats, dogs, staff, pets }) => {
+export const PetsListNav = ({ cats, dogs }) => {
 
   // useNavigate()
 
