@@ -1,13 +1,40 @@
+import { petData } from "../../data/pets";
+
+// function allCats(){
+
+
+//    const CatGroup=petData.filter((el)=>{el.kind ==="Cat"
+
+
+
+
+
+
+
+//    })
+
+
+
+
+
+//    return (<><div>{CatGroup}</div></>);
+
+
+
+// }
+
+// export default allCats
+
 import React from "react";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
 
-export const PetsList = ({ pets }) => {
+export const PetsListNav2 = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
     (acc, pet) => {
-      const position = pet.kind === "Cat" ? 0 : 1;
-      acc[position].push(pet);
+      const position = pet.kind === "Cat" ? 0 :1;
+      acc[position].push(pet==="Cat");
       return acc;
     },
     [[], []]
@@ -25,13 +52,13 @@ export const PetsList = ({ pets }) => {
           <Pet key={cat.id} kind="cat" pet={cat} />
         ))}
 
-        {}
+        {/* {}
         {dogs.map((dog) => (
-          <Pet key={dog.id} kind="dog" pet={dog} />
-        ))}
+          <Pet key={dog.id} kind="dog" pet={dog} /> */}
+        {/* ))} */}
       </section>
     </section>
   );
 };
 
-export default PetsList;
+export default PetsListNav2;
