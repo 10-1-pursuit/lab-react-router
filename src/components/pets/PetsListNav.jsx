@@ -1,5 +1,9 @@
 import React from "react";
 import "./PetsListNav.css";
+import { useNavigate } from "react-router-dom";
+
+
+import { redirect } from "react-router-dom";
 
 export const PetsListNav = ({ cats, dogs }) => {
   return (

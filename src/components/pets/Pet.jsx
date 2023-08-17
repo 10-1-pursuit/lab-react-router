@@ -11,7 +11,7 @@ export const Pet = ({ kind, pet }) => {
   return (
     <article key={pet.id}>
       <h3>
-        {icon} {pet.name}
+        {icon} {pet.kind}
       </h3>
     </article>
   );
