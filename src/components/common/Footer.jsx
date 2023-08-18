@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer>
-      <p>Northwest Animal Hospital. 2022.</p>
+      <span>Northwest Animal Hospital. 2022.</span>
     </footer>
   );
 }
