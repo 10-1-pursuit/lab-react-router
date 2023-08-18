@@ -2,7 +2,7 @@ import React from "react";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import { Link } from "react-router-dom";
+import {BrowserRouter, Route, Link } from "react-router-dom";
 
 const PetsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
