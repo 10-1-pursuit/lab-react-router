@@ -1,5 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import NotFound from "./components/NotFound";
 
 /*
   Components
@@ -24,14 +26,38 @@ function App() {
   const [owners] = useState(ownerData);
   const [pets] = useState(petData);
 
+  const cats = pets.filter(pet => pet.kind === "Cat");
+  const dogs = pets.filter(pet => pet.kind === "Dog");
+
   return (
+    <Router>
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Switch>
+        <Route path = "/" exact><Home employees={employees} owners={owners} pets={pets} />
+        </Route>
+      
+      <Route path = 
+      "/staff"><StaffList employees={employees} />
+      </Route> 
+
+      <Route path = 
+      "/pets/cats"><PetsList pets={pets.filter(pet => pet.type === "cat")} />
+      </Route> 
+
+      <Route path = 
+      "/pets/dogs"><PetsList pets={pets.filter(pet => pet.type === "dog")} />
+      </Route> 
+
+      <Redirect from="/pets" to="/pets/cats"/>
+
+      {/* Route for 404 page */}
+      <Route path = "*" component = {NotFound} />
+
+      </Switch>
       <Footer />
     </div>
+    </Router>
   );
 }
 
