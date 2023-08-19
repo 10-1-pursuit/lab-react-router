@@ -2,6 +2,7 @@ import React from "react";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
+import {Link} from "react-router-dom";
 
 export const PetsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
@@ -26,6 +27,13 @@ export const PetsList = ({ pets }) => {
         {dogs.map((dog) => (
           <Pet key={dog.id} kind="dog" pet={dog} />
         ))}
+
+        {/* Link to All Cats 🐈 */}
+        <Link to = "pets/cats">See All Cats</Link> 
+
+        {/* Link to All Dogs 🐕 */}
+        <Link to = "pets/dogs">See All Dogs</Link> 
+
       </section>
     </section>
   );
