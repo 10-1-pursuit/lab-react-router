@@ -11,6 +11,9 @@ export const Pet = ({ kind, pet }) => {
   const icon = iconMap[kind];
   return (
     <article key={pet.id}>
+      <Routes>
+        <Route path="/" element={<Navigate to="cats" />} />
+      </Routes>
       <h3>
         {icon} {pet.name}
       </h3>

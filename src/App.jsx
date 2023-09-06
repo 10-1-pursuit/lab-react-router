@@ -35,16 +35,17 @@ function App() {
           path="/staff" element={<StaffList employees={employees} />} />
           <Route
           path="/pets/*" element={<PetsList pets={pets} />} />
-           {/* <Route path="/cats" element={<PetsList pets={pets} />} />
-          <Route path="/dogs" element={<PetsList pets={pets} />} />  */}
-          {/* </Route> */}
-        </Routes>
+         <Route path="/cats" element={<PetsList pets={pets} />} />
+          <Route path="/dogs" element={<PetsList pets={pets} />} />
+          </Routes> 
+       
         <Footer />
       </Router>
       
-     
+  
      
     </div>
+  
   );
 }
 
