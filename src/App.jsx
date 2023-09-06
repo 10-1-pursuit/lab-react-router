@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 /*
   Components
 */
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+import Nav from "./components/common/Nav.jsx";
+import Footer from "./components/common/Footer.jsx";
+import Home from "./components/home/Home.jsx";
+import StaffList from "./components/staff/StaffList.jsx";
+import PetsList from "./components/pets/PetsList.jsx";
 
 /*
   Data
@@ -26,11 +26,24 @@ function App() {
 
   return (
     <div className="wrapper">
+      <Router>
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
-      <Footer />
+        <Routes>
+          <Route 
+          path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+          <Route 
+          path="/staff" element={<StaffList employees={employees} />} />
+          <Route
+          path="/pets/*" element={<PetsList pets={pets} />} />
+           {/* <Route path="/cats" element={<PetsList pets={pets} />} />
+          <Route path="/dogs" element={<PetsList pets={pets} />} />  */}
+          {/* </Route> */}
+        </Routes>
+        <Footer />
+      </Router>
+      
+     
+     
     </div>
   );
 }

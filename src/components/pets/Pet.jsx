@@ -1,5 +1,6 @@
 import React from "react";
 import "./Pet.css";
+import{Routes, Route, Navigate} from "react-router-dom"
 
 const iconMap = {
   cat: "🐈",
